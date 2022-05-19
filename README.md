@@ -7,17 +7,17 @@ Server:
 Client:
 `python3 ChatApp.py -c bob 127.0.0.1 8000 9000`
 
-**Project Structure:
+###Project Structure:###
     
-    1. ChatApp.py: 
-        * It parses and checks commandline arguments. 
-        * It checks the -c or -s flag.
-        * It checks the format of the IP address, including if length is 4, 
+    *** ChatApp.py: 
+        1. It parses and checks commandline arguments. 
+        2. It checks the -c or -s flag.
+        3. It checks the format of the IP address, including if length is 4, 
         and if all four numbers are [0, 255]
-        * It checks if the port number in range [0, 65535]
-        * It creates corresponding client/server object, pass in IP address, port number, and nickname to the object. And call the memeber function `run`
+        4. It checks if the port number in range [0, 65535]
+        5. It creates corresponding client/server object, pass in IP address, port number, and nickname to the object. And call the memeber function `run`
 
-    2. client.py
+    ***client.py
     1. Create two threads. 
         1. First one is to listen to the user input and send messages.
         2. Second one is to receive messages from other clients/server
