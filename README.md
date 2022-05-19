@@ -1,15 +1,15 @@
 Qinghang Hong qh2249
 
-###Command to compile:
+### Command to compile:
 Server:
 `python3 ChatApp.py -s 8000`
 
 Client:
 `python3 ChatApp.py -c bob 127.0.0.1 8000 9000`
 
-###Project Structure:###
+### Project Structure:
     
-    *** ChatApp.py: 
+   #### ChatApp.py: ####
         1. It parses and checks commandline arguments. 
         2. It checks the -c or -s flag.
         3. It checks the format of the IP address, including if length is 4, 
@@ -17,7 +17,7 @@ Client:
         4. It checks if the port number in range [0, 65535]
         5. It creates corresponding client/server object, pass in IP address, port number, and nickname to the object. And call the memeber function `run`
 
-    ***client.py
+  #### client.py ####
     1. Create two threads. 
         1. First one is to listen to the user input and send messages.
         2. Second one is to receive messages from other clients/server
@@ -45,7 +45,7 @@ Client:
         5. print error reg when is active
         6. Server not responding will result in exiting the program
 
-####3. server.py
+#### 3. server.py. ####
 
         1. Create a thread to constantly listen to the messages from client.
         2. On receiving a message, look at the first char and call the corresponding handler.
@@ -58,7 +58,7 @@ Client:
             3. Forward channel message to everyone active other than the sender, save messages for offline user
             4. If no ack from supposedly active user, save the message to the file
 
-####Not Implemented/Known bugs:
+### Not Implemented/Known bugs:
 
 1. Confirm status to supposedly active but not responding users(Simply consider it offline)
 2. Some incorrect displayed `<<<`
