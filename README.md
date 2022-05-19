@@ -45,7 +45,7 @@ Client:
         5. print error reg when is active
         6. Server not responding will result in exiting the program
 
-#### 3. server.py. ####
+#### server.py. ####
 
         1. Create a thread to constantly listen to the messages from client.
         2. On receiving a message, look at the first char and call the corresponding handler.
