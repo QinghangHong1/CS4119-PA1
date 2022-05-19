@@ -1,0 +1,98 @@
+Test case 1:
+x:
+python3 ChatApp.py -c x 127.0.0.1 8000 9000 
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> send x 1234
+x: 1234
+>>> >>> [Message received by x.]
+>>> send y 1324 324r3
+>>> [Message received by y.]
+>>> z: re
+>>> z: yyyy
+>>> dereg x
+>>> [You are offline. Bye.]
+>>> reg x
+>>> [Welcome, You are registered]
+[Client table updated]
+>>> You have message
+>>> y: <2022-03-25 12:59:23.133928> 234er 
+>>> z: <2022-03-25 12:59:28.950355> erdatrq qwetr 
+>>> >>> 
+
+y:
+python3 ChatApp.py -c y 127.0.0.1 8000 9001
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> x: 1324 324r3
+>>> send z ertrweqt ewrg
+>>> [Message received by z.]
+>>> [Client table updated]
+>>> send x 234er
+[Messages received by the server and saved]
+>>> [Client table updated]
+>>> 
+
+z:
+python3 ChatApp.py -c z 127.0.0.1 8000 9002
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> y: ertrweqt ewrg
+>>> send x re
+>>> [Message received by x.]
+>>> send kkk kkkkkk^           
+The client kkk is not found
+>>> send x yyyy
+>>> [Message received by x.]
+>>> [Client table updated]
+>>> send x erdatrq qwetr
+[Messages received by the server and saved]
+>>> [Client table updated]
+>>> 
+
+
+
+
+Test case 2:
+python3 ChatApp.py -c x 127.0.0.1 8000 9000
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> send y 1234
+>>> [Server not responding]
+>>> [Exiting]
+
+y:
+python3 ChatApp.py -c y 127.0.0.1 8000 9001
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> dereg y
+>>> [You are offline. Bye.]
+>>> 
+
+Test case 3:
+
+python3 ChatApp.py -c x 127.0.0.1 8000 9005
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> send_all 12345 3245
+>>> [Message received by server]
+>>> 
+
+$ python3 ChatApp.py -c y 127.0.0.1 8000 9000
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> [Client table updated]
+>>> Channel_Message<x>: 12345 3245
+>>> 
+
+$ python3 ChatApp.py -c z 127.0.0.1 8000 9001
+>>> [Welcome, You are registered]
+>>> [Client table updated]
+>>> Channel_Message<x>: 12345 3245
